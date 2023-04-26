@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React, {useEffect} from "react";
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    useEffect(() => {
+        let link = document.createElement('link');
+        link.href = 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css';
+        link.rel = 'stylesheet';
+        document.head.appendChild(link);
+    }, []);
+
+    return (
+        <div className="app">
+            <div className='box'>
+                <input type='checkbox' id='check'/>
+                <div className='search-box'>
+                    <input type='text' placeholder='Type here...'/>
+                    <label htmlFor='check' className='icon'>
+                        <i className='bx bx-search'></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
